@@ -23,15 +23,27 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Optional: You can still handle custom submission logic if needed
-  // For basic Netlify Forms, the form submission is handled by Netlify.
-  const handleSubmit = (e: React.FormEvent) => {
-    // Prevent default if you want to show a toast and reset manually
-    e.preventDefault();
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     setIsSubmitting(true);
 
-    // Normally, Netlify handles the form submission automatically.
-    // If you want a custom submission behavior, you can perform extra actions here.
+    const myForm = event.target as HTMLFormElement;
+    const formDataObj = new FormData(myForm);
+
+    // Convert FormData to a format URLSearchParams can accept
+    const formDataForUrl = {} as Record<string, string>;
+    formDataObj.forEach((value, key) => {
+      formDataForUrl[key] = value.toString();
+    });
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formDataForUrl).toString(),
+    })
+      .then(() => console.log("Form successfully submitted"))
+      .catch((error) => alert(error));
+
     setTimeout(() => {
       toast({
         title: "Message sent!",
