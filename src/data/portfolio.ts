@@ -168,14 +168,14 @@ const portfolioData: PortfolioData = {
   ],
   projects: [
     {
-      title: "Job Application Tracker",
+      title: "JobSailor – Job Application Tracker",
       description:
         "Developed a web application to streamline job application processes.",
       detailedDescription:
         "This application allows users to track job applications, manage resumes, and receive notifications for new job postings. It integrates with various job boards and provides a user-friendly interface for managing applications.",
       skills: ["ReactJS", "NodeJS", "Firebase", "Vite", "TailwindCSS", "Git"],
       // image: "https://www.site-shot.com/3iatmhTAEfC5qwJCrBEAAw",
-      link: "https://job-tracker-harsh.netlify.app/",
+      link: "https://github.com/HarshNaikwade/JobSailor",
     },
     {
       title: "PEACE – AI-Powered Counseling Platform",
@@ -186,7 +186,7 @@ const portfolioData: PortfolioData = {
       skills: ["Python", "Flask", "AI/ML", "MongoDB", "ReactJS"],
       // image:
       //   "https://media.licdn.com/dms/image/v2/C4D1FAQFQixVys418Iw/feedshare-document-cover-images_1280/feedshare-document-cover-images_1280/0/1673285882578?e=1744574400&v=beta&t=Q1lC_z-fX8tN2yYIOpqAbRrsQPUI1vPfWLpjakzSt6o",
-      link: "https://github.com/HarshNaikwade/Peace/",
+      link: "https://github.com/HarshNaikwade/Peace",
     },
     {
       title: "Hope – Blood Donation Management System",
